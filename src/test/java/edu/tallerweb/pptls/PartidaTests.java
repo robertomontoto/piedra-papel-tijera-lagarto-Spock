@@ -16,15 +16,15 @@ public class PartidaTests {
 
 	}
 
-   @Test 
-   public void queTijeraCortaPapel(){
+	@Test 
+	public void queTijeraCortaPapel(){
    
-	   Mano jugadorUno=new Mano(Forma.TIJERA);
-	   Mano jugadorDos=new Mano(Forma.PAPEL);
+		Mano jugadorUno=new Mano(Forma.TIJERA);
+		Mano jugadorDos=new Mano(Forma.PAPEL);
     
-	   assertEquals("Tijera que corta Papel",
-			   		Resultado.GANA,jugadorUno.jugarCon(jugadorDos));    
-   }
+		assertEquals("Tijera que corta Papel",
+			    Resultado.GANA,jugadorUno.jugarCon(jugadorDos));    
+    }
    
    @Test 
    public void quePapelCubrePiedra(){
@@ -33,7 +33,7 @@ public class PartidaTests {
 	  Mano jugadorDos=new Mano(Forma.PAPEL);
     
 	  assertEquals("Papel cubre Piedra",
-			  		Resultado.GANA,jugadorDos.jugarCon(jugadorUno));    
+			  Resultado.GANA,jugadorDos.jugarCon(jugadorUno));    
   }
  
   @Test
@@ -43,7 +43,7 @@ public class PartidaTests {
 	  Mano jugadorDos=new Mano(Forma.LAGARTO);
 	 
 	  assertEquals("Piedra aplaste Lagarto",
-			  		Resultado.GANA,jugadorUno.jugarCon(jugadorDos));
+			  Resultado.GANA,jugadorUno.jugarCon(jugadorDos));
    }
   
 
@@ -53,8 +53,8 @@ public class PartidaTests {
 	  Mano jugadorUno=new Mano(Forma.SPOCK);
 	  Mano jugadorDos=new Mano(Forma.PIEDRA);
 	 
-	  assertEquals("Piedra es Vaporizada por Spock",
-			  		Resultado.PIERDE,jugadorDos.jugarCon(jugadorUno));
+	 assertEquals("Piedra es Vaporizada por Spock",
+			 Resultado.PIERDE,jugadorDos.jugarCon(jugadorUno));
    }	
   
   @Test
@@ -64,7 +64,48 @@ public class PartidaTests {
 	  Mano jugadorDos=new Mano(Forma.LAGARTO);
 	 
 	  assertEquals("Lagarto empata con Lagarto",
-			  		Resultado.EMPATA,jugadorDos.jugarCon(jugadorUno));
+			  Resultado.EMPATA,jugadorDos.jugarCon(jugadorUno));
+   }
+  
+  @Test
+  public void quePapelescortadoporTijera(){
+	  
+	  Mano jugadorUno=new Mano(Forma.PAPEL);
+	  Mano jugadorDos=new Mano(Forma.TIJERA);
+	 
+	  assertEquals("Papel es cortado por Tijera",
+			  Resultado.PIERDE,jugadorUno.jugarCon(jugadorDos));
    }	
  
+  @Test
+  public void queLargatoseadecapitadoporTijera(){
+	  
+	  Mano jugadorUno=new Mano(Forma.TIJERA);
+	  Mano jugadorDos=new Mano(Forma.LAGARTO);
+	 
+	  assertEquals("Lagarto es decapitado por Tijera",
+			  Resultado.PIERDE,jugadorDos.jugarCon(jugadorUno));
+   }	
+  
+  @Test
+  public void queSpockdestrozeTijera(){
+	  
+	  Mano jugadorUno=new Mano(Forma.SPOCK);
+	  Mano jugadorDos=new Mano(Forma.TIJERA);
+	 
+	  assertEquals("Spock destroza tijera",
+			  Resultado.GANA,jugadorUno.jugarCon(jugadorDos));
+   }
+  
+  @Test
+  public void quePapelrefuteSpock(){
+	  
+	  Mano jugadorUno=new Mano(Forma.SPOCK);
+	  Mano jugadorDos=new Mano(Forma.PAPEL);
+	 
+	  assertEquals("Spock destroza tijera",
+			  Resultado.GANA,jugadorDos.jugarCon(jugadorUno));
+   }	
+  
+  
 }
