@@ -22,7 +22,7 @@ public class PartidaTests {
 		Mano jugadorUno=new Mano(Forma.TIJERA);
 		Mano jugadorDos=new Mano(Forma.PAPEL);
     
-		assertEquals("Tijera que corta Papel",
+		assertEquals("Tijera corta Papel",
 			    Resultado.GANA,jugadorUno.jugarCon(jugadorDos));    
     }
    
@@ -42,7 +42,7 @@ public class PartidaTests {
 	  Mano jugadorUno=new Mano(Forma.PIEDRA);
 	  Mano jugadorDos=new Mano(Forma.LAGARTO);
 	 
-	  assertEquals("Piedra aplaste Lagarto",
+	  assertEquals("Piedra aplaste a Lagarto",
 			  Resultado.GANA,jugadorUno.jugarCon(jugadorDos));
    }
   
@@ -103,7 +103,7 @@ public class PartidaTests {
 	  Mano jugadorUno=new Mano(Forma.SPOCK);
 	  Mano jugadorDos=new Mano(Forma.PAPEL);
 	 
-	  assertEquals("Spock destroza tijera",
+	  assertEquals("Papel es refutado por Spock",
 			  Resultado.GANA,jugadorDos.jugarCon(jugadorUno));
    }	
   
