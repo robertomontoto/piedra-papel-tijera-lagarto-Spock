@@ -10,11 +10,11 @@ public enum Forma {
 	private final Integer valor;
 
 	private Forma(final Integer valor) {
-		this.valor = valor;
+			this.valor = valor;
 	}
 
 	public Integer getValor() {
-		return this.valor;
+			return this.valor;
 	}
 
 }
