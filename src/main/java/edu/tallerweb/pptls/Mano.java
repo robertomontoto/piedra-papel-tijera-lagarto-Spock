@@ -30,7 +30,7 @@ public class Mano {
 		matriz[0][3] = matriz[0][4] = matriz[1][0] = matriz[1][4] = matriz[2][0] = matriz[2][1] = matriz[3][1] = matriz[3][2] = matriz[4][2] = matriz[4][3] = Resultado.GANA;
 		matriz[0][1] = matriz[0][2] = matriz[1][2] = matriz[1][3] = matriz[2][3] = matriz[2][4] = matriz[3][0] = matriz[3][4] = matriz[4][0] = matriz[4][1] = Resultado.PIERDE;
 
-	    Resultado formaseleccionada=matriz[this.forma.getValor()][otra.forma.getValor()];
+	    Resultado formaseleccionada = matriz[this.forma.getValor()][otra.forma.getValor()];
 	    return formaseleccionada;
 	}
 
